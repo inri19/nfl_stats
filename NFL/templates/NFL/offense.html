@@ -1,0 +1,225 @@
+{% extends 'NFL/base.html' %}
+
+{% block content %}
+
+<br><br>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner" style="max-height: 600px; width: auto;">
+    <div class="carousel-item active">
+      <img src="https://atozsports.com/wp-content/uploads/2021/10/USATSI_16886686-scaled.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="http://res.cloudinary.com/ybmedia/image/upload/c_crop,h_1123,w_2000,x_0,y_105/c_fill,f_auto,h_900,q_auto,w_1600/v1/m/5/e/5e5850808ec85b83bd50055288adb9211eafa8bf/bills-stefon-diggs-on-connection-josh-allen-thats.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://static01.nyt.com/images/2022/09/09/multimedia/09nfl-billsrams/09nfl-billsrams-videoSixteenByNine3000.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="container-fluid" style="background: linear-gradient(#212529 70%, #899097);">
+	
+	<h1 style="color: white">NFL OFFENSE!</h1>
+
+</div>
+-->
+<section class="dark_default" style="color: white;">
+	<h1>Quater Back</h1>
+
+	<div class="container">
+		
+		<div class="table-responsive">
+
+			<table class="table table-bordered" style="color: white;">
+
+				<caption>QuaterBack</caption>
+
+			  	<thead class="table-dark">
+		    		<tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Photo</th>
+				      <th scope="col">Nom</th>
+				      <th scope="col">Pass Yards</th>
+				      <th scope="col">Pass +20 yards</th>
+				      <th scope="col">Pass +40 yards</th>
+				      <th scope="col">Pourcentage de complétion</th>
+				      <th scope="col">TD</th>
+				      <th scope="col">Interception</th>
+				      <th scope="col">Sack</th>
+				    </tr>
+		  		</thead>
+
+		  		<tbody>
+		   		 	
+		   		 	{% for qb in qbs.values %}
+
+		   		 		{% if forloop.counter == 1 %}
+
+			   		 		<tr class="table-success">
+						      <th scope="row">{{ forloop.counter }}</th>
+						      <td><img class="img-fluid" src="{{ qb.11 }}" style="max-width: 60px; height: auto;"></td>
+						      <td>{{ qb.0 }}</td>
+						      <td>{{ qb.1 }}</td>
+						      <td>{{ qb.8 }}</td>
+						      <td>{{ qb.9 }}</td>
+						      <td>{{ qb.5 }}</td>
+						      <td>{{ qb.6 }}</td>
+						      <td>{{ qb.7 }}</td>
+						      <td>{{ qb.10 }}</td>
+						    </tr>
+
+						{% elif forloop.counter == 12 %}
+
+							<tr class="table-warning">
+						      <th scope="row">{{ forloop.counter }}</th>
+						      <td><img class="img-fluid" src="{{ qb.11 }}" style="max-width: 60px; height: auto;"></td>
+						      <td>{{ qb.0 }}</td>
+						      <td>{{ qb.1 }}</td>
+						      <td>{{ qb.8 }}</td>
+						      <td>{{ qb.9 }}</td>
+						      <td>{{ qb.5 }}</td>
+						      <td>{{ qb.6 }}</td>
+						      <td>{{ qb.7 }}</td>
+						      <td>{{ qb.10 }}</td>
+						    </tr>
+
+					    {% else %}
+
+					    	<tr>
+						      <th scope="row">{{ forloop.counter }}</th>
+						      <td><img class="img-fluid" src="{{ qb.11 }}" style="max-width: 60px; height: auto;"></td>
+						      <td>{{ qb.0 }}</td>
+						      <td>{{ qb.1 }}</td>
+						      <td>{{ qb.8 }}</td>
+						      <td>{{ qb.9 }}</td>
+						      <td>{{ qb.5 }}</td>
+						      <td>{{ qb.6 }}</td>
+						      <td>{{ qb.7 }}</td>
+						      <td>{{ qb.10 }}</td>
+						    </tr>
+
+					    {% endif %}
+
+		   		 	{% endfor %}
+
+		  		</tbody>
+		  		
+	  		</table>
+
+		</div>
+
+	</div>
+
+    <div class="curve"></div>
+</section>
+
+<section class="green">
+	<h1>Running Back</h1>
+
+	<div class="container">
+		
+		<div class="table-responsive">
+
+			<table class="table table-bordered">
+
+				<caption>RunningBack</caption>
+
+			  	<thead class="table-secondary">
+		    		<tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Photo</th>
+				      <th scope="col">Nom</th>
+				      <th scope="col">Nombre de portée</th>
+				      <th scope="col">Rush Yards</th>
+				      <th scope="col">Rush +20 yards</th>
+				      <th scope="col">Rush +40 yards</th>
+				      <th scope="col">TD</th>
+				      <th scope="col">Fumble</th>
+				    </tr>
+		  		</thead>
+
+		  		<tbody>
+		   		 	
+		   		 	{% for rb in rbs.values %}
+
+		   		 		<tr>
+					      <th scope="row">{{ forloop.counter }}</th>
+					      <td><img class="img-fluid" src="{{ rb.7 }}" style="max-width: 60px; height: auto;"></td>
+					      <td>{{ rb.0 }}</td>
+					      <td>{{ rb.2 }}</td>
+					      <td>{{ rb.1 }}</td>
+					      <td>{{ rb.4 }}</td>
+					      <td>{{ rb.5 }}</td>
+					      <td>{{ rb.3 }}</td>
+					      <td>{{ rb.6 }}</td>
+					    </tr>
+
+		   		 	{% endfor %}
+
+		  		</tbody>
+		  		
+	  		</table>
+		</div>
+
+	</div>
+
+	<div class="curve2"></div>
+
+</section>
+
+<section class="dark" style="color: white;">
+	<h1>Wide Receiver</h1>
+	
+	<div class="container">
+		
+		<div class="table-responsive">
+
+			<table class="table table-bordered" style="color:white;">
+
+				<caption>WideReceiver</caption>
+
+			  	<thead class="table-primary">
+		    		<tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Photo</th>
+				      <th scope="col">Nom</th>
+				      <th scope="col">Nombre de reception</th>
+				      <th scope="col">Yards</th>
+				      <th scope="col">Reception +20 yards</th>
+				      <th scope="col">Reception +40 yards</th>
+				      <th scope="col">TD</th>
+				    </tr>
+		  		</thead>
+
+		  		<tbody>
+		   		 	
+		   		 	{% for wr in wrs.values %}
+
+		   		 		<tr>
+					      <th scope="row">{{ forloop.counter }}</th>
+					      <td><img class="img-fluid" src="{{ wr.6 }}" style="max-width: 60px; height: auto;"></td>
+					      <td>{{ wr.0 }}</td>
+					      <td>{{ wr.1 }}</td>
+					      <td>{{ wr.2 }}</td>
+					      <td>{{ wr.3 }}</td>
+					      <td>{{ wr.4 }}</td>
+					      <td>{{ wr.5 }}</td>
+					    </tr>
+
+		   		 	{% endfor %}
+
+		  		</tbody>
+		  		
+	  		</table>
+
+	  	</div>
+
+	</div>
+
+	
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,104 @@
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item-left {
+  flex: 50%;
+}
+
+.flex-item-right {
+  flex: 50%;
+  background-color: #212529;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
+
+/* === removing default button style BOUTON ===*/
+.buttono {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* button styling */
+.buttono {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.buttono:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
+
+/* BOUTTON 2 */
+.buttoni {
+ width: 140px;
+ height: 45px;
+ font-size: 23px;
+ cursor: pointer;
+ border: none;
+ outline: none;
+ background: transparent;
+ color: white;
+ font-family: 'Times New Roman', Times, serif;
+ font-weight: 700;
+ position: relative;
+ transition: all 0.5s;
+ z-index: 1;
+}
+
+.buttoni::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 5px;
+ height: 100%;
+ background-color: #37FF8B;
+ z-index: -1;
+ transition: all 0.5s;
+}
+
+.buttoni:hover::before {
+ width: 100%;
+}
+
+.buttoni:hover {
+ color: black;
+}
+
+.buttoni:active:before {
+ background: #b9b9b9;
+}

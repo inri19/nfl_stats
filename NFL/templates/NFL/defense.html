@@ -1,0 +1,124 @@
+{% extends 'NFL/base.html' %}
+
+{% block content %}
+
+<br><br>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner" style="max-height: 600px; width: auto;">
+    <div class="carousel-item active position-relative">
+      <img src="https://ninerswire.usatoday.com/wp-content/uploads/sites/77/2021/08/hufanga.jpg?w=1024&h=576&crop=1" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.gannett-cdn.com/presto/2021/10/25/PWIL/6760b533-a625-44bf-a2b5-931de142f79d-fletcher_cox1021.jpg?crop=3831,2155,x0,y195&width=3200&height=1801&format=pjpg&auto=webp" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://twsn.net/wp-content/uploads/sites/105/2021/05/Jordyn-Brooks.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+
+<section class="dark" style="color:white;">
+
+	<h1>Defense Tackles</h1>
+	
+	<div class="container">
+		
+		<div class="table-responsive">
+
+			<table class="table table-bordered" style="color:white;">
+
+				<caption>Defense Tackles</caption>
+
+			  	<thead class="table-dark">
+		    		<tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Photo</th>
+				      <th scope="col">Nom</th>
+				      <th scope="col">Tackle Total</th>
+				      <th scope="col">Tackle Assisté</th>
+				      <th scope="col">Tackle Solo</th>
+				      <th scope="col">Sack</th>
+				    </tr>
+		  		</thead>
+
+		  		<tbody>
+		   		 	
+					{% for tackle in tackles.values %}
+
+						<tr>
+						      
+						    <th scope="row">{{ forloop.counter }}</th>
+						    <td><img class="img-fluid" src="{{ tackle.5 }}" style="max-width: 60px; height: auto;"></td>
+						    <td>{{ tackle.0 }}</td>
+						    <td>{{ tackle.1 }}</td>
+						    <td>{{ tackle.2 }}</td>
+						    <td>{{ tackle.3 }}</td>
+						    <td>{{ tackle.4 }}</td>
+
+						</tr>
+
+					{% endfor %}		   		 	
+
+		  		</tbody>
+		  		
+	  		</table>
+		</div>
+
+	</div>
+
+	<div class="curve3"></div>
+
+</section>
+
+<section class="blue">
+	
+	<h1>Defense Interceptions</h1>
+	
+	<div class="container">
+		
+		<div class="table-responsive">
+
+			<table class="table table-bordered" style="color:white;">
+
+				<caption>Defense Interceptions</caption>
+
+			  	<thead class="table-dark">
+		    		<tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Photo</th>
+				      <th scope="col">Nom</th>
+				      <th scope="col">Nombre Int</th>
+				      <th scope="col">Nombre Int pour TD</th>
+				      <th scope="col">Longue Yard Parcouru pour un TD</th>
+				    </tr>
+		  		</thead>
+
+		  		<tbody>
+		   		 	
+					{% for int in ints.values %}
+
+						<tr>
+						      
+						    <th scope="row">{{ forloop.counter }}</th>
+						    <td><img class="img-fluid" src="{{ int.5 }}" style="max-width: 60px; height: auto;"></td>
+						    <td>{{ int.0 }}</td>
+						    <td>{{ int.1 }}</td>
+						    <td>{{ int.2 }}</td>
+						    <td>{{ int.4 }}</td>
+
+						</tr>
+
+					{% endfor %}		   		 	
+
+		  		</tbody>
+		  		
+	  		</table>
+
+		</div>
+
+	</div>
+
+</section>
+
+{% endblock %}

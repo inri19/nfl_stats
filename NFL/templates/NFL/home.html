@@ -1,0 +1,75 @@
+{% extends 'NFL/base.html' %}
+{% load static %}
+
+{% block style %}<link rel="stylesheet" href="{% static 'nfl/home.css' %}">{% endblock %}
+
+{% block content %}
+
+<br><br>
+
+<div class="flex-container">
+
+  	<div class="flex-item-left">
+  		<img src="https://cdn.vox-cdn.com/thumbor/nEgI1BmiViT6PUvjTeS40K5bD6Y=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/24014151/usa_today_19030831.jpg" class="img-fluid rounded-start" alt="Justin Jefferson" style='background-image: cover; height: 100%'>
+  	</div>
+
+  	<div class="flex-item-right">
+
+  		<br><br>
+
+  		<div class="container">
+
+        <div class="text-center">
+
+    		  <button data-text="Awesome" class="buttono">
+  				    
+            <span class="actual-text">&nbsp;Justin_Jefferson&nbsp;</span>
+  				  <span class="hover-text" aria-hidden="true">&nbsp;Justin_Jefferson&nbsp;</span>
+
+  				</button>
+
+        </div>
+
+        <div class="container text-center mt-5 pb-5">
+          <div class="row g-2">
+
+            <div class="col-6">
+              <div class="p-3 border border-warning bg-success">
+                <h1 class="display-3">81 Receptions</h1>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="p-3 border border-warning bg-success">
+                <h1 class="display-3">1,232 Rec.Yards</h1>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="p-3 border border-warning bg-success">
+                <h1 class="display-3">15.2 Yds/R</h1>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="p-3 border border-warning bg-success">
+                <h1 class="display-3">5 TD</h1>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mx-auto">
+          <img src="https://img.icons8.com/ios/250/null/national-football-league.png"/>
+        </div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+{% endblock %}
